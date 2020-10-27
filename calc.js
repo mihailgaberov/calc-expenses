@@ -2,7 +2,7 @@ var fs = require('fs');
 
 const addNumbersReducer = (currentNumber, nextNumber) => currentNumber + nextNumber;
 
-calculate = () => {
+const calculate = () => {
     fs.readFile('data.txt', 'utf8', (err, data) => {
         if (err) {
             throw new Error(err)
