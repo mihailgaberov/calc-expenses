@@ -8,8 +8,8 @@ calculate = () => {
             throw new Error(err)
         }
 
-        const arr = data.split('\r\n');
-        const result = arr
+        const result = data
+            .split('\r\n')
             .filter(e => e)
             .map(parseFloat)
             .reduce(addNumbersReducer);
