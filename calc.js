@@ -1,5 +1,7 @@
 var fs = require('fs');
 
+const addNumbersReducer = (currentNumber, nextNumber) => currentNumber + nextNumber;
+
 calculate = () => {
     fs.readFile('data.txt', 'utf8', (err, data) => {
         if (err) {
@@ -10,7 +12,7 @@ calculate = () => {
         const result = arr
             .filter(e => e)
             .map(parseFloat)
-            .reduce((curr, next) => curr + next);
+            .reduce(addNumbersReducer);
         console.log('RESULT: ', result);
     });
 }
